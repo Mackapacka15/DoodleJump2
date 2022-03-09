@@ -5,7 +5,7 @@ namespace DoodleJump2
 {
     public class Plate : GameObjekt
     {
-        public Color plateGreen = new Color(0, 207, 21, 255);
+        protected Color plateGreen = new Color(0, 207, 21, 255);
 
 
         public Plate()
@@ -19,6 +19,11 @@ namespace DoodleJump2
         public override void Update()
         {
             rec.y += 1;
+
+            if (rec.y > 1000)
+            {
+                remove = true;
+            }
         }
         public override void Draw()
         {

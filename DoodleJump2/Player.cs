@@ -44,6 +44,7 @@ namespace DoodleJump2
                 {
                     if (Raylib.CheckCollisionRecs(rec, item.rec))
                     {
+                        item.Collided();
                         jump = true;
                     }
                 }

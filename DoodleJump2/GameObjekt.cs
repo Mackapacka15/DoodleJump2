@@ -8,6 +8,7 @@ namespace DoodleJump2
         static protected Random generator = new Random();
         static public List<GameObjekt> gameObjekts = new List<GameObjekt>();
         public Rectangle rec = new Rectangle();
+        public bool remove = false;
 
         public GameObjekt()
         {
@@ -19,6 +20,10 @@ namespace DoodleJump2
 
         }
         public virtual void Draw()
+        {
+
+        }
+        public virtual void Collided()
         {
 
         }

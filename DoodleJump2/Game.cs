@@ -5,6 +5,7 @@ namespace DoodleJump2
 {
     public class Game
     {
+        Random generator = new Random();
         float timer = 0;
         Player p;
 
@@ -21,7 +22,7 @@ namespace DoodleJump2
                 new Plate().rec.y = 150 * i;
             }
         }
-        
+
         public string Update()
         {
             timer += Raylib.GetFrameTime();
@@ -34,12 +35,22 @@ namespace DoodleJump2
                 item.Update();
             }
 
-            GameObjekt.gameObjekts.RemoveAll(t => t.rec.y > 1000 && t is not Player);
+            //GameObjekt.gameObjekts.RemoveAll(t => t.rec.y > 1000 && t is not Player);
+            GameObjekt.gameObjekts.RemoveAll(t => t.remove);
+            // Console.WriteLine(GameObjekt.gameObjekts.Count);
 
             if (timer >= 2)
             {
                 timer = 0;
-                new Plate();
+                if (generator.Next(0, 5) == 3)
+                {
+
+                    new FragilePlate();
+                }
+                else
+                {
+                    new Plate();
+                }
             }
             return "Game";
         }
