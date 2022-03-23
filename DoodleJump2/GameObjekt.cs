@@ -3,7 +3,7 @@ using Raylib_cs;
 
 namespace DoodleJump2
 {
-    public class GameObjekt
+    public abstract class GameObjekt
     {
         static protected Random generator = new Random();
         static public List<GameObjekt> gameObjekts = new List<GameObjekt>();
